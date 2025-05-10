@@ -1,0 +1,1 @@
+export type DeviceType = 'router' | 'switch' | 'host' | 'server'; 

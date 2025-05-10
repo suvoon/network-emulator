@@ -1,0 +1,108 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background-color: var(--bg-color, #f5f5f5);
+}
+
+.formContainer {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: var(--card-bg, white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color, #333);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.inputGroup label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary, #555);
+}
+
+.inputGroup input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--input-bg, white);
+    color: var(--text-color, #333);
+    transition: border-color 0.2s;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: var(--primary-color, #3490dc);
+}
+
+.loginButton {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: var(--primary-color, #3490dc);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.loginButton:hover {
+    background-color: var(--primary-hover, #2779bd);
+}
+
+.loginButton:disabled {
+    background-color: var(--disabled-color, #a0aec0);
+    cursor: not-allowed;
+}
+
+.error {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    background-color: var(--error-bg, #fed7d7);
+    color: var(--error-text, #e53e3e);
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.linkContainer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-secondary, #555);
+}
+
+.link {
+    color: var(--primary-color, #3490dc);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.link:hover {
+    color: var(--primary-hover, #2779bd);
+    text-decoration: underline;
+}

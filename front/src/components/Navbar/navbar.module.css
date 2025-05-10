@@ -1,0 +1,113 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--navbar-bg, #1a202c);
+    color: var(--navbar-text, white);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navbar-text, white);
+    text-decoration: none;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.actionButton {
+    background-color: var(--dark-button-bg, #2d3748);
+    color: white;
+    border: 1px solid var(--dark-button-border, #4a5568);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    text-decoration: none;
+}
+
+.actionButton:hover {
+    background-color: var(--dark-button-hover, #4a5568);
+    border-color: var(--dark-button-border-hover, #718096);
+}
+
+/* Disabled button styles */
+.disabledButton {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.disabledButton:hover {
+    background-color: var(--dark-button-bg, #2d3748);
+    border-color: var(--dark-button-border, #4a5568);
+}
+
+/* Disabled link styles */
+.disabledLinkWrapper {
+    position: relative;
+    cursor: not-allowed;
+}
+
+.disabledLink {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navLink {
+    color: var(--navbar-link, #d1d5db);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    text-decoration: none;
+}
+
+.navLink:hover {
+    color: var(--navbar-link-hover, white);
+    background-color: var(--navbar-link-bg-hover, rgba(255, 255, 255, 0.1));
+}
+
+.activeLink {
+    color: var(--navbar-link-hover, white);
+    background-color: var(--navbar-link-bg-hover, rgba(255, 255, 255, 0.1));
+    font-weight: 500;
+}
+
+.username {
+    font-size: 0.875rem;
+    color: var(--navbar-text-secondary, #d1d5db);
+}
+
+.logoutButton {
+    background: transparent;
+    border: 1px solid var(--navbar-button-border, #64748b);
+    color: var(--navbar-text, white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.logoutButton:hover {
+    background-color: var(--navbar-button-hover, #2d3748);
+    border-color: var(--navbar-button-border-hover, #94a3b8);
+}

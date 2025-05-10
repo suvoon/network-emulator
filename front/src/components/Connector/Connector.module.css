@@ -1,0 +1,28 @@
+.connector {
+    position: absolute;
+    height: 2px;
+    background-color: var(--foreground);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Invisible wider hitbox for easier interaction */
+.connector::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    background: transparent;
+}
+
+.connector:hover {
+    background-color: var(--device-border);
+    height: 3px;
+}
+
+.connector.selected {
+    background-color: #2196f3;
+    height: 3px;
+}

@@ -1,0 +1,155 @@
+# Dependencies
+node_modules/
+/**/node_modules/
+.pnp/
+.pnp.js
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+nosetests.xml
+*.cover
+.hypothesis/
+
+# Production build
+/build
+/dist
+.next/
+out/
+.nuxt
+.cache/
+
+# Environment and local config
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.local
+.env.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Debug
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Database
+*.sqlite3
+*.sqlite3-journal
+*.db
+
+# Media and static (if serving from elsewhere)
+/media
+/static
+
+# Frontend specific
+# dependencies
+/front/.pnp
+/front/.pnp.js
+
+# testing
+/front/coverage
+
+# next.js
+/front/.next/
+/front/out/
+
+# production
+/front/build
+
+# misc
+/front/.DS_Store
+/front/*.pem
+
+# debug
+/front/npm-debug.log*
+/front/yarn-debug.log*
+/front/yarn-error.log*
+
+# vercel
+/front/.vercel
+
+# typescript
+/front/*.tsbuildinfo
+/front/next-env.d.ts
+
+# Backend specific
+# Byte-compiled / optimized / DLL files
+/back/__pycache__/
+/back/**/__pycache__/
+/back/**/**/__pycache__/
+/back/**/**/**/__pycache__/
+/back/**/*.py[cod]
+/back/**/*$py.class
+
+# Django stuff
+/back/*.log
+/back/local_settings.py
+/back/db.sqlite3
+/back/db.sqlite3-journal
+/back/media
+
+# Flask stuff
+/back/instance/
+/back/.webassets-cache
+
+# Virtual environment
+/back/venv/
+/back/env/
+/back/.venv/
+/back/.env/
+/back/ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Mininet specific
+/back/**/*_log.txt
+/back/mininet_logs/ 

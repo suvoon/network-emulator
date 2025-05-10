@@ -1,0 +1,328 @@
+.canvas {
+    background-color: var(--background);
+    border: 1px solid var(--gray-300);
+    flex: 1;
+    position: relative;
+    background-image:
+        linear-gradient(var(--canvas-grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--canvas-grid) 1px, transparent 1px);
+    background-size: 20px 20px;
+    user-select: none;
+}
+
+.device {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    background: var(--device-bg);
+    border: 1px solid var(--device-border);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transform: translate(-50%, -50%);
+    cursor: move;
+    z-index: 1;
+    user-select: none;
+    color: var(--foreground);
+    padding: 6px;
+}
+
+.deviceIcon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deviceLabel {
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.device:hover {
+    background: var(--gray-200);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.device:active {
+    cursor: grabbing;
+}
+
+.device.selected {
+    border: 2px solid #2196f3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+}
+
+.header {
+    background: var(--background);
+    border-bottom: 1px solid var(--gray-300);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actionButton {
+    padding: 8px 12px;
+    background: var(--primary);
+    color: var(--foreground);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.actionButton:hover {
+    opacity: 0.9;
+}
+
+.loading {
+    pointer-events: none;
+    position: relative;
+}
+
+.loaderContainer {
+    filter: blur(3px);
+}
+
+.loaderContainer,
+.spinnerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    filter: blur(0);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #007bff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+.loadingText {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Empty state styling */
+.emptyStateContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.emptyState {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyState h2 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.emptyState p {
+    margin-bottom: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.createTopologyButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.createTopologyButton:hover {
+    background-color: #388E3C;
+}
+
+/* Validation Button */
+.validateButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: var(--dark-button-bg, #2d3748);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 100;
+    transition: background-color 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.validateButton:hover {
+    background-color: var(--dark-button-hover, #4a5568);
+}
+
+/* Validation Results Modal */
+.validationModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.validationModalContent {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.validationModalContent h2 {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.validationModalContent h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.validBadge {
+    background-color: #4caf50;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.invalidBadge {
+    background-color: #f44336;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.errorList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.errorList li {
+    background-color: #ffebee;
+    border-left: 4px solid #f44336;
+    padding: 10px;
+    margin-bottom: 8px;
+    color: #d32f2f;
+}
+
+.warningList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.warningList li {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+    margin-bottom: 8px;
+    color: #ff8f00;
+}
+
+.successMessage {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 10px;
+    color: #2e7d32;
+}
+
+.modalButtonsContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.closeButton {
+    padding: 8px 16px;
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.closeButton:hover {
+    background-color: #bdbdbd;
+}

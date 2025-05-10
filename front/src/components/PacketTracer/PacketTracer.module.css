@@ -1,0 +1,268 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.container {
+    background-color: var(--background, white);
+    color: var(--foreground, black);
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    width: 90%;
+    max-width: 700px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.closeButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--foreground);
+}
+
+.content {
+    padding: 0;
+    overflow-y: auto;
+    max-height: calc(80vh - 130px);
+    flex: 1;
+}
+
+.form {
+    padding: 20px;
+    overflow-y: visible;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--foreground);
+    font-size: 14px;
+}
+
+.ipInputGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.ipInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--foreground);
+    font-size: 14px;
+}
+
+.ipSelect {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--foreground);
+    font-size: 14px;
+}
+
+.numberInput {
+    width: 100px;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--foreground);
+    font-size: 14px;
+}
+
+.menuButton {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.menuButton:hover {
+    background-color: var(--primary-dark);
+}
+
+.menuButton:disabled {
+    background-color: var(--disabled);
+    cursor: not-allowed;
+}
+
+.results {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--border, #e0e0e0);
+    border-radius: 4px;
+    background-color: var(--background-secondary, #f5f5f5);
+    overflow-x: auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.error {
+    color: var(--error, #d32f2f);
+    font-weight: 500;
+    margin: 10px 20px;
+    padding: 10px;
+    background-color: rgba(211, 47, 47, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid var(--error, #d32f2f);
+}
+
+.hopsList {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.hopItem {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.hopNode {
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.hopAction {
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hopDetails {
+    color: var(--foreground-secondary);
+}
+
+.pingList {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.pingItem {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.pingHeader {
+    margin-bottom: 15px;
+}
+
+.toolSelector {
+    display: flex;
+    border-bottom: 1px solid var(--border, #e0e0e0);
+    background-color: var(--background-secondary, #f5f5f5);
+}
+
+.toolButton {
+    flex: 1;
+    padding: 12px;
+    background: none;
+    border: none;
+    color: var(--foreground, #333);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.toolButton.active {
+    background-color: var(--primary-light, #e3f2fd);
+    color: var(--primary, #1976d2);
+    border-bottom: 2px solid var(--primary, #1976d2);
+}
+
+.toolButton:hover:not(.active) {
+    background-color: var(--hover, #f0f0f0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

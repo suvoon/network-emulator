@@ -1,0 +1,422 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+    background-color: var(--background);
+    color: var(--foreground);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out;
+    overflow: hidden;
+}
+
+.header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.closeButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--foreground);
+}
+
+.content {
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.value {
+    padding: 10px;
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--foreground);
+    font-size: 14px;
+}
+
+.hint {
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--foreground-secondary);
+}
+
+.error {
+    margin: 10px 0;
+    padding: 10px;
+    color: var(--error);
+    background-color: rgba(211, 47, 47, 0.1);
+    border-radius: 4px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cancelButton,
+.saveButton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancelButton {
+    background-color: var(--gray-200);
+    color: var(--foreground);
+}
+
+.saveButton {
+    background-color: var(--primary);
+    color: white;
+}
+
+.cancelButton:hover {
+    background-color: var(--gray-300);
+}
+
+.saveButton:hover {
+    background-color: var(--primary-dark);
+}
+
+.cancelButton:disabled,
+.saveButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.configureInterfacesButton {
+    background-color: #2ecc71;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.configureInterfacesButton:hover {
+    background-color: #27ae60;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Router Config Modal */
+.routerConfigOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+
+.routerConfigModal {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 900px;
+    max-width: 95%;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.routerConfigHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f8f8;
+}
+
+.routerConfigTitle {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.routerConfigTabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f8f8;
+}
+
+.routerConfigTab {
+    padding: 15px 20px;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    color: #555;
+    font-weight: 500;
+}
+
+.routerConfigTab:hover {
+    background-color: #f0f0f0;
+}
+
+.activeTab {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+.activeTab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #2ecc71;
+}
+
+.routerConfigContent {
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Tab navigation */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background-color: var(--background-secondary);
+    margin-bottom: 0;
+}
+
+.tab {
+    padding: 12px 20px;
+    border: none;
+    background: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--foreground-secondary);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.tab:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.activeTab {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.activeTab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.tabContent {
+    padding: 15px 0 0;
+}
+
+/* Tables */
+.tableContainer {
+    margin: 15px 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.table th {
+    background-color: var(--background-secondary);
+    font-weight: 600;
+    color: var(--foreground);
+    font-size: 0.9rem;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Empty states */
+.emptyState {
+    padding: 20px;
+    text-align: center;
+    color: var(--foreground-secondary);
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* Loading */
+.loading {
+    padding: 20px;
+    text-align: center;
+    color: var(--foreground-secondary);
+}
+
+/* Success message */
+.success {
+    margin: 10px 0;
+    padding: 10px;
+    color: #2ecc71;
+    background-color: rgba(46, 204, 113, 0.1);
+    border-radius: 4px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 25px;
+}
+
+.sectionTitle {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--foreground);
+    font-weight: 600;
+}
+
+/* Form layouts */
+.formRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.formField {
+    flex: 1;
+    min-width: 150px;
+}
+
+.formField label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.formField input,
+.formField select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background-color: var(--input-background);
+    color: var(--foreground);
+    font-size: 0.9rem;
+}
+
+/* Add button */
+.addButton {
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    align-self: flex-end;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+
+.addButton:hover {
+    background-color: var(--primary-dark);
+}

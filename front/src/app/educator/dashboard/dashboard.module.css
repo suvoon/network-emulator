@@ -1,0 +1,397 @@
+.dashboardContainer {
+    width: 100%;
+}
+
+.dashboardTitle {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Tabs styling */
+.tabsContainer {
+    display: flex;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tabButton {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.tabButton:hover {
+    color: #3182ce;
+}
+
+.activeTab {
+    color: #3182ce;
+    border-bottom: 3px solid #3182ce;
+}
+
+.tabContent {
+    padding: 0 20px;
+    background: #fff;
+}
+
+/* Layout styling */
+.twoColumnLayout {
+    display: flex;
+    gap: 2rem;
+}
+
+.leftColumn {
+    flex: 1;
+    min-width: 300px;
+}
+
+.leftColumn h2,
+.rightColumn h2 {
+    margin: 0 0 1rem;
+}
+
+.rightColumn {
+    flex: 1.5;
+}
+
+@media (max-width: 768px) {
+    .twoColumnLayout {
+        flex-direction: column;
+    }
+}
+
+/* Groups list styling */
+.groupsList,
+.materialsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.groupItem,
+.materialItem {
+    padding: 1rem;
+    border-radius: 4px;
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.groupItem:hover {
+    border-color: #3182ce;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.selectedGroup {
+    background: #ebf8ff;
+    border-color: #3182ce;
+}
+
+.groupItem h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.groupItem p {
+    margin: 0 0 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.studentCount {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Materials styling */
+.materialItem {
+    cursor: default;
+}
+
+.materialItem h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.materialMeta {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.materialType,
+.materialVisibility {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.materialType {
+    background: #e6f7ff;
+    color: #0070f3;
+}
+
+.materialVisibility {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.materialGroups {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.groupTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+}
+
+.groupTag {
+    background: #f3f4f6;
+    color: #4b5563;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+}
+
+/* Forms styling */
+.createForm {
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 1.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.createForm h2,
+.createForm h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.formInput,
+.formTextarea,
+.formSelect {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.formTextarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.contentTextarea {
+    min-height: 200px;
+    font-family: monospace;
+}
+
+.formButton {
+    padding: 0.75rem 1.5rem;
+    background: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.formButton:hover {
+    background: #2c5282;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.checkboxGroup {
+    margin-bottom: 0;
+}
+
+.checkboxGroup label {
+    margin-bottom: 0;
+}
+
+.formRow {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.formRow .formSelect {
+    margin-bottom: 0;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #4a5568;
+    cursor: pointer;
+}
+
+.groupCheckboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Group details styling */
+.groupDetails {
+    padding: 0 1rem 1rem;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+}
+
+.groupDetails h3 {
+    color: #333;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.groupDetails p {
+    color: #666;
+    margin: 0 0 1rem 0;
+}
+
+.membersList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.memberItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.memberName {
+    font-weight: 500;
+    color: #333;
+    display: block;
+}
+
+.memberEmail {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+}
+
+.removeButton {
+    padding: 0.25rem 0.5rem;
+    background: #f56565;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.removeButton:hover {
+    background: #e53e3e;
+}
+
+.addStudentForm {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.userSearch {
+    margin-top: 1rem;
+}
+
+.searchResultItem {
+    padding: 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.searchResultItem:hover {
+    background: #ebf8ff;
+}
+
+.searchResultItem span {
+    display: block;
+}
+
+.searchResultItem .smallText {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.noSelection {
+    padding: 2rem;
+    text-align: center;
+    color: #666;
+    background: #f9f9f9;
+    border-radius: 6px;
+    border: 1px dashed #ddd;
+}
+
+.headerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+    background-color: #e5e5e5;
+}

@@ -1,0 +1,534 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background);
+    color: var(--foreground);
+}
+
+.tutorialContent {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    gap: 30px;
+    height: calc(100vh - 70px);
+    /* Account for navbar height */
+    overflow: hidden;
+    /* Prevent overflow on the container */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--gray-100);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    height: 100%;
+    overflow-y: auto;
+    /* Allow sidebar to scroll independently */
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-300);
+    font-size: 1.2rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sidebar li:hover {
+    background-color: var(--gray-200);
+}
+
+.sidebar li.active {
+    background-color: var(--primary-soft, #e0f2fe);
+    color: var(--primary-dark, #0369a1);
+    font-weight: 500;
+}
+
+.backLink {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--gray-300);
+}
+
+.backLink a {
+    color: var(--gray-600);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.backLink a:hover {
+    color: var(--primary);
+}
+
+.content {
+    flex: 1;
+    padding: 25px;
+    background-color: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow-y: auto;
+    max-height: calc(100vh - 120px);
+}
+
+.content h2 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: var(--gray-900);
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    font-size: 1.3rem;
+    color: var(--gray-800);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--gray-700);
+}
+
+.content ul,
+.content ol {
+    padding-left: 22px;
+    margin-bottom: 20px;
+}
+
+.content li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.infoBox,
+.warningBox {
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.infoBox {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid rgba(59, 130, 246, 0.8);
+}
+
+.warningBox {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid rgba(239, 68, 68, 0.8);
+}
+
+.infoBox h4,
+.warningBox h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.infoBox p,
+.warningBox p {
+    margin-bottom: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .tutorialContent {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Educational materials section */
+.materialsList {
+    margin-top: 2rem;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    /* Fill available height */
+}
+
+.materialItem {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.materialHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.75rem;
+}
+
+.materialHeader h3 {
+    margin: 0;
+    color: var(--text-color, #333);
+}
+
+.materialAuthor {
+    color: var(--text-secondary, #666);
+    font-size: 0.875rem;
+}
+
+.materialContent {
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.materialDate {
+    font-size: 0.875rem;
+    color: var(--text-secondary, #666);
+    text-align: right;
+}
+
+.errorBox {
+    background-color: #fed7d7;
+    color: #e53e3e;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Form styles for material creation */
+.createForm {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.formInput,
+.formTextarea,
+.formSelect {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.formTextarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkboxLabel input {
+    margin-right: 0.5rem;
+}
+
+.checkboxGroup {
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.submitButton {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submitButton:hover {
+    background-color: #1565c0;
+}
+
+.submitButton:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+.actionButton {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: inline-block;
+}
+
+.actionButton:hover {
+    background-color: #1565c0;
+}
+
+.cancelButton {
+    background-color: #f44336;
+}
+
+.cancelButton:hover {
+    background-color: #d32f2f;
+}
+
+/* Material display styles */
+.materialsList {
+    list-style: none;
+    padding: 0 !important;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+}
+
+.materialItem {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    background-color: white;
+}
+
+.materialHeader {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.materialHeader h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.materialMeta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.materialType {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.materialAuthor {
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+.materialGroups {
+    padding: 0.5rem 1rem;
+    background-color: #f9f9f9;
+    font-size: 0.9rem;
+}
+
+.groupTag {
+    font-weight: 500;
+}
+
+.materialDate {
+    padding: 0.5rem 1rem;
+    color: #757575;
+    font-size: 0.8rem;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e0e0e0;
+    text-align: right;
+}
+
+.deleteButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.deleteButton:hover {
+    background-color: #d32f2f;
+}
+
+.videoEmbed {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-height: 350px;
+}
+
+.videoEmbed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Filters for educational materials */
+.filtersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+
+.filterGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filterLabel {
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.emptyState {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    color: #666;
+}
+
+.materialsScrollContainer {
+    overflow-y: auto;
+    max-height: calc(100vh - 250px);
+    /* Adjust based on the space needed for filters and headers */
+    padding-right: 10px;
+    /* Add some padding for the scrollbar */
+    margin-right: -10px;
+    /* Compensate for the padding */
+}
+
+/* Add to your existing styles */
+
+.materialListItem {
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.materialListItem:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.materialPreview {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+.contentPreview {
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+    padding: 0 1rem;
+}
+
+.materialDetailView {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.backButton {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+    background-color: #e5e5e5;
+}
+
+.materialContent {
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.materialContent img {
+    max-width: 100%;
+    height: auto;
+}
+
+.videoEmbed {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    /* 16:9 aspect ratio */
+    margin: 1rem 0;
+}
+
+.videoEmbed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
