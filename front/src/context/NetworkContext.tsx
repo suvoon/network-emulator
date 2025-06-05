@@ -29,7 +29,7 @@ export interface Topology {
     is_active: boolean;
 }
 
-interface NetworkContextType {
+export interface NetworkContextType {
     devices: Device[];
     connections: Connection[];
     showPacketTracer: boolean;

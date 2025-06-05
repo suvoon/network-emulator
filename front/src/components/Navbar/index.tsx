@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '../../context/AuthContext';
-import { useNetwork } from '../../context/NetworkContext';
+import { NetworkContextType, useNetwork } from '../../context/NetworkContext';
 import { TopologyMenu } from '../TopologyMenu';
 import styles from './navbar.module.css';
 
@@ -17,7 +17,10 @@ export function Navbar({ isDashboardPage = false }: NavbarProps) {
     const pathname = usePathname();
     const isTutorialPage = pathname === '/tutorial';
 
-    const network = !isTutorialPage ? useNetwork() : null;
+    let network: NetworkContextType | null = useNetwork();
+    if (isTutorialPage) {
+        network = null;
+    }
     const hasTopologies = network?.hasTopologies ?? false;
 
     const router = useRouter();

@@ -39,7 +39,7 @@ export default function TutorialPage() {
     const [selectedMaterial, setSelectedMaterial] = useState<Material | null>(null);
 
     const [selectedType, setSelectedType] = useState('');
-    const [availableGroups, setAvailableGroups] = useState<Array<{ id: number, name: string }>>([]);
+    const [, setAvailableGroups] = useState<Array<{ id: number, name: string }>>([]);
 
     const materialTypes = [
         { value: 'text', label: 'Текстовый материал' },
@@ -197,11 +197,11 @@ export default function TutorialPage() {
                         Трассировка пакетов позволяет наблюдать за тем, как пакеты данных перемещаются между устройствами в вашей сети:
                     </p>
                     <ol>
-                        <li>Нажмите кнопку "Трассировка пакета" в верхней панели.</li>
+                        <li>Нажмите кнопку &quot;Трассировка пакета&quot; в верхней панели.</li>
                         <li>В открывшемся окне выберите исходное устройство.</li>
                         <li>Выберите целевое устройство.</li>
                         <li>Выберите протокол (TCP, UDP или ICMP).</li>
-                        <li>Нажмите "Запустить трассировку" для начала симуляции.</li>
+                        <li>Нажмите &quot;Запустить трассировку&quot; для начала симуляции.</li>
                         <li>Наблюдайте, как пакет перемещается между устройствами.</li>
                     </ol>
                     <div className={styles.warningBox}>
@@ -223,9 +223,9 @@ export default function TutorialPage() {
                     <h3>Создание новой топологии</h3>
                     <ol>
                         <li>Нажмите на выпадающее меню топологий в верхней панели.</li>
-                        <li>Выберите "Создать новую топологию".</li>
+                        <li>Выберите &quot;Создать новую топологию&quot;.</li>
                         <li>Введите имя и описание для новой топологии.</li>
-                        <li>Нажмите "Создать".</li>
+                        <li>Нажмите &quot;Создать&quot;.</li>
                     </ol>
                     <h3>Переключение между топологиями</h3>
                     <ol>
@@ -285,6 +285,8 @@ export default function TutorialPage() {
                                 {selectedMaterial.material_type === 'video' ? (
                                     <div className={styles.videoEmbed}>
                                         <iframe
+                                            height="800"
+                                            width="100%"
                                             src={selectedMaterial.content}
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen
@@ -330,7 +332,7 @@ export default function TutorialPage() {
                                 </div>
                             )}
 
-                            <div className={styles.materialsScrollContainer}>
+                            <div>
                                 {loadingMaterials ? (
                                     <p>Загрузка материалов...</p>
                                 ) : educationalMaterials.length === 0 ? (

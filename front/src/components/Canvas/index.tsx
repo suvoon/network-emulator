@@ -214,6 +214,7 @@ export function Canvas() {
 
                         await topologyApi.activate(Number(savedTopologyId));
                     } catch (error) {
+                        console.log(error);
                         console.error('Failed to load saved topology, falling back to active topology');
                         Cookies.remove('activeTopologyId');
                         await loadActiveTopology();
@@ -267,7 +268,7 @@ export function Canvas() {
             };
 
             try {
-                let endpoint, apiMethod;
+                let apiMethod;
                 if (deviceType === 'switch') {
                     apiMethod = nodeApi.addSwitch;
                 } else if (deviceType === 'router') {
@@ -329,7 +330,7 @@ export function Canvas() {
         }
     };
 
-    const handleDeviceDragEnd = async (e: React.DragEvent) => {
+    const handleDeviceDragEnd = async () => {
         if (draggedDevice) {
             const deviceId = draggedDevice;
             const device = devices.find(d => d.id === deviceId);
@@ -420,7 +421,7 @@ export function Canvas() {
 
         if (selectedDevice && selectedDevice !== deviceId) {
             try {
-                const result = await linkApi.add({
+                await linkApi.add({
                     node1: selectedDevice,
                     node2: deviceId
                 });
@@ -743,7 +744,7 @@ export function Canvas() {
                             }}
                             draggable
                             onDragStart={(e) => handleDeviceDragStart(e, device)}
-                            onDragEnd={handleDeviceDragEnd}
+                            onDragEnd={() => handleDeviceDragEnd}
                             onContextMenu={(e) => handleContextMenu(e, device.id)}
                             onClick={(e) => handleDeviceClick(e, device.id)}
                         >

@@ -5,9 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '../../../context/AuthContext';
 import styles from './dashboard.module.css';
 import { materialsApi, authApi } from '../../../api/network';
-import Link from 'next/link';
 import { Navbar } from '../../../components/Navbar';
-import { NetworkProvider } from '../../../context/NetworkContext';
 
 interface Student {
     id: number;
